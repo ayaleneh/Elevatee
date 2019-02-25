@@ -2,7 +2,11 @@
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
 .row.content {height: 450px}
 
-
+.header{
+    background-color: #26272b;
+    color: white;
+}
+body {background-color: #f0f0f0;background-image: linear-gradient(180deg, #f0f0f0, #e0e0e0);}
 /* On small screens, set height to 'auto' for sidenav and grid */
 @media screen and (max-width: 767px) {
     .sidenav {
@@ -23,7 +27,6 @@
     background-color: #f1f1f1;
     height: 90%;
     background-color: #f1f1f1;
-    overflow-x: hidden;
     z-index: 1;
     background-color: #eee;
 }
@@ -362,4 +365,43 @@ footer {
         margin-right:0;
         font-weight:600
     }
+}
+/*search box*/
+.autocomplete {
+    /*the container must be positioned relative:*/
+    position: relative;
+    display: inline-block;
+}
+
+.autocomplete-items {
+
+    position: absolute;
+    border: 1px solid black;
+
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: block;
+}
+
+.autocomplete-items div {
+    z-index: -1;
+    padding: 10px;
+    left: 500px;
+    display: block;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.autocomplete-items div:hover {
+    /*when hovering an item:*/
+    background-color: #e9e9e9;
+}
+
+.autocomplete-active {
+    /*when navigating through the items using the arrow keys:*/
+    background-color: DodgerBlue !important;
+    color: #ffffff;
 }

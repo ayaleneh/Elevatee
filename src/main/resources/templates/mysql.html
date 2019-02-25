@@ -1,13 +1,391 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" th:href="@{style.css}" type="text/css">
+    <link rel="stylesheet" href="../static/style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 </head>
 <body>
-<h2>mysql page</h2>
+
+<div class="navbar navbar-fixed-top navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <img src="https://res.cloudinary.com/dmwim1a1p/image/upload/v1550954458/Elevate-Logo.png"
+                 class="navbar-brand" id="toplogo" alt="Logo">
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">About
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/AboutBootCamp">About BootCamp</a></li>
+                        <li><a href="/AboutDeveloper">About Developer</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+        <!-- /.nav-collapse -->
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.navbar -->
+
+<div class="container-fluid">
+    <div class="row row-offcanvas row-offcanvas-left">
+
+
+        <div class="col-xs-5 col-sm-3 sidenav-offcanvas sidenav" role="navigation">
+            <div class="content">
+                <h4>Topics</h4>
+                <a href="/Github">GitHub</a>
+                <a href="/ProgramDesign">Program Design & Algorithm</a>
+                <button class="dropdown-btn">Java
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-container">
+                    <a href="/CoreJava">Core Java</a>
+                    <a href="/Polymorphism">Polymorphism</a>
+                    <a href="/Inheritance">Inheritance</a>
+                    <a href="/Encapsulation">Encapsulation</a>
+                    <a href="/Composition">Composition</a>
+                </div>
+
+                <button class="dropdown-btn">Web Design
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-container">
+                    <a href="/html5">HTML5</a>
+                    <a href="/css">CSS3</a>
+                    <a href="/javascript">JavaScript</a>
+                    <a href="/mysql">MySql</a>
+                    <a href="/springBoot">SpringBoot</a>
+                </div>
+                <a href="/Github">Exercise</a>
+                <a href="/Github">Sample Project</a>
+                <br>
+                <div class="input-group">
+                    <input type="text" class="form-control"  id="myInput" placeholder="Search Blog..">
+                    <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="col-xs-11 col-sm-7">
+            <br>
+            <div class="jumbotron">
+                <a href="#" class="visible-xs" data-toggle="offcanvas"><i class="fa fa-lg fa-reorder"></i></a>
+                <h1>Core Java</h1>
+
+                <div id="pageToc" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                    <ul><li><a href="#variables">Variables</a></li><li><a href="#operations">Operations</a></li><li><a href="#classes-objects">Classes + Objects</a><ul><li><a href="#fields">Fields</a></li><li><a href="#constructors">Constructors</a></li><li><a href="#methods">Methods</a></li></ul></li><li><a href="#interfaces">Interfaces</a></li><li><a href="#packages">Packages</a></li></ul>
+                </div>
+                <div id="lastUpdate">
+                    <table><tr><td class="authorPhoto"></td>
+                        <td><p style="margin: 0px 0px 6px 0px;">
+                            Ayaleneh yilma<br>
+                            Last update: 2015-02-13
+                        </p>
+                            <div class="authorSocialLinks"></div>
+                        </td>
+                    </tr>
+                    </table>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-6 col-sm-6 col-lg-4">
+                    <h2 style="text-decoration: underline">Core Java</h2>
+                    <h5><span class="label label-primary">Java</span></h5>
+                    <h5><span class="glyphicon glyphicon-time"></span> Post by Ayaleneh yilma, Sep 27, 2015.</h5>
+                    <br>
+                    <p>Bootstrap is a front-end framework that uses CSS and JavaScript to facilitate responsive Web
+                        design. Bootply is a playground for Bootstrap that enables developers and designers to test,
+                        prototype and create mockups using Bootstrap
+                        friendly HTML, CSS and Javascript.</p>
+                    <p><a class="btn btn-default" href="/CoreJava">View details »</a></p>
+                </div>
+                <!--/span-->
+                <div class="col-6 col-sm-6 col-lg-4">
+                    <h2 style="text-decoration: underline">Inheritance</h2>
+                    <h5><span class="label label-primary">Inheritance</span></h5>
+                    <h5><span class="glyphicon glyphicon-time"></span> Post by Ayaleneh yilma, Sep 27, 2015.</h5>
+                    <br>
+                    <p>Bootply is a playground for Bootstrap that enables developers and designers to test, prototype
+                        and create mockups using Bootstrap friendly HTML, CSS and Javascript. Bootstrap is a front-end
+                        framework that uses CSS and JavaScript to
+                        facilitate responsive Web design. </p>
+                    <p><a class="btn btn-default" href="/Inheritance">View details »</a></p>
+                </div>
+                <!--/span-->
+
+                <div class="col-6 col-sm-6 col-lg-4">
+                    <h2 style="text-decoration: underline">Polymorphism</h2>
+                    <h5><span class="label label-primary">Polymorphism</span></h5>
+                    <h5><span class="glyphicon glyphicon-time"></span> Post by Ayaleneh yilma, Sep 27, 2015.</h5>
+                    <br>
+                    <p>Bootstrap is a front-end framework that uses CSS and JavaScript to facilitate responsive Web
+                        design. Bootply is a playground for Bootstrap that enables developers and designers to test,
+                        prototype and create mockups using Bootstrap
+                        friendly HTML, CSS and Javascript.</p>
+                    <p><a class="btn btn-default" href="/Polymorphism">View details »</a></p>
+                </div>
+                <!--/span-->
+                <div class="col-6 col-sm-6 col-lg-4">
+                    <h2 style="text-decoration: underline">Composition</h2>
+                    <h5><span class="label label-primary">Composition</span></h5>
+                    <h5><span class="glyphicon glyphicon-time"></span> Post by Ayaleneh yilma, Sep 27, 2015.</h5>
+                    <br>
+                    <p>Bootstrap is a front-end framework that uses CSS and JavaScript to facilitate responsive Web
+                        design. Bootply is a playground for Bootstrap that enables developers and designers to test,
+                        prototype and create mockups using Bootstrap
+                        friendly HTML, CSS and Javascript.</p>
+                    <p><a class="btn btn-default" href="/Composition">View details »</a></p>
+                </div>
+                <!--/span-->
+
+                <div class="col-6 col-sm-6 col-lg-4">
+                    <h2 style="text-decoration: underline">Abstraction</h2>
+                    <h5><span class="label label-primary">Abstraction</span></h5>
+                    <h5><span class="glyphicon glyphicon-time"></span> Post by Ayaleneh yilma, Sep 27, 2015.</h5>
+                    <br>
+                    <p>Bootstrap is a front-end framework that uses CSS and JavaScript to facilitate responsive Web
+                        design. Bootply is a playground for Bootstrap that enables developers and designers to test,
+                        prototype and create mockups using Bootstrap
+                        friendly HTML, CSS and Javascript.</p>
+                    <p><a class="btn btn-default" href="/Abstraction">View details »</a></p>
+                </div>
+                <!--/span-->
+
+                <div class="col-6 col-sm-6 col-lg-4">
+                    <h2 style="text-decoration: underline">Encapsulation</h2>
+                    <h5><span class="label label-primary">Encapsulation</span></h5>
+                    <h5><span class="glyphicon glyphicon-time"></span> Post by Ayaleneh yilma, Sep 27, 2015.</h5>
+                    <br>
+                    <p>Bootstrap is a front-end framework that uses CSS and JavaScript to facilitate responsive Web
+                        design. Bootply is a playground for Bootstrap that enables developers and designers to test,
+                        prototype and create mockups using Bootstrap
+                        friendly HTML, CSS and Javascript.</p>
+                    <p><a class="btn btn-default" href="/Encapsulation">View details »</a></p>
+                </div>
+                <!--/span-->
+
+                <div class="col-6 col-sm-6 col-lg-4">
+                    <h2 style="text-decoration: underline">HTML5</h2>
+                    <h5><span class="label label-primary">HTML5</span></h5>
+                    <h5><span class="glyphicon glyphicon-time"></span> Post by Ayaleneh yilma, Sep 27, 2015.</h5>
+                    <br>
+                    <p>Bootstrap is a front-end framework that uses CSS and JavaScript to facilitate responsive Web
+                        design. Bootply is a playground for Bootstrap that enables developers and designers to test,
+                        prototype and create mockups using Bootstrap
+                        friendly HTML, CSS and Javascript.</p>
+                    <p><a class="btn btn-default" href="/html5">View details »</a></p>
+                </div>
+                <!--/span-->
+
+                <div class="col-6 col-sm-6 col-lg-4">
+                    <h2 style="text-decoration: underline">CSS3</h2>
+                    <h5><span class="label label-primary">CSS3</span></h5>
+                    <h5><span class="glyphicon glyphicon-time"></span> Post by Ayaleneh yilma, Sep 27, 2015.</h5>
+                    <br>
+                    <p>Bootstrap is a front-end framework that uses CSS and JavaScript to facilitate responsive Web
+                        design. Bootply is a playground for Bootstrap that enables developers and designers to test,
+                        prototype and create mockups using Bootstrap
+                        friendly HTML, CSS and Javascript.</p>
+                    <p><a class="btn btn-default" href="/css">View details »</a></p>
+                </div>
+                <!--/span-->
+
+                <div class="col-6 col-sm-6 col-lg-4">
+                    <h2 style="text-decoration: underline">Javascript</h2>
+                    <h5><span class="label label-primary">Javascript</span></h5>
+                    <h5><span class="glyphicon glyphicon-time"></span> Post by Ayaleneh yilma, Sep 27, 2015.</h5>
+                    <br>
+                    <p>Bootstrap is a front-end framework that uses CSS and JavaScript to facilitate responsive Web
+                        design. Bootply is a playground for Bootstrap that enables developers and designers to test,
+                        prototype and create mockups using Bootstrap
+                        friendly HTML, CSS and Javascript.</p>
+                    <p><a class="btn btn-default" href="/javascript">View details »</a></p>
+                </div>
+                <!--/span-->
+
+                <div class="col-6 col-sm-6 col-lg-4">
+                    <h2 style="text-decoration: underline">MySql</h2>
+                    <h5><span class="label label-primary">MySql</span></h5>
+                    <h5><span class="glyphicon glyphicon-time"></span> Post by Ayaleneh yilma, Sep 27, 2015.</h5>
+                    <br>
+                    <p>Bootstrap is a front-end framework that uses CSS and JavaScript to facilitate responsive Web
+                        design. Bootply is a playground for Bootstrap that enables developers and designers to test,
+                        prototype and create mockups using Bootstrap
+                        friendly HTML, CSS and Javascript.</p>
+                    <p><a class="btn btn-default" href="/mysql">View details »</a></p>
+                </div>
+                <!--/span-->
+                <div class="col-6 col-sm-6 col-lg-4">
+                    <h2 style="text-decoration: underline">BootStrap</h2>
+                    <h5><span class="label label-primary">BootStrap</span></h5>
+                    <h5><span class="glyphicon glyphicon-time"></span> Post by Ayaleneh yilma, Sep 27, 2015.</h5>
+                    <br>
+                    <p>Bootstrap is a front-end framework that uses CSS and JavaScript to facilitate responsive Web
+                        design. Bootply is a playground for Bootstrap that enables developers and designers to test,
+                        prototype and create mockups using Bootstrap
+                        friendly HTML, CSS and Javascript.</p>
+                    <p><a class="btn btn-default" href="#">View details »</a></p>
+                </div>
+                <!--/span-->
+
+                <div class="col-6 col-sm-6 col-lg-4">
+                    <h2 style="text-decoration: underline">SpringBoot</h2>
+                    <h5><span class="label label-primary">SpringBoot</span></h5>
+                    <h5><span class="glyphicon glyphicon-time"></span> Post by Ayaleneh yilma, Sep 27, 2015.</h5>
+                    <br>
+                    <p>Bootstrap is a front-end framework that uses CSS and JavaScript to facilitate responsive Web
+                        design. Bootply is a playground for Bootstrap that enables developers and designers to test,
+                        prototype and create mockups using Bootstrap
+                        friendly HTML, CSS and Javascript.</p>
+                    <p><a class="btn btn-default" href="/springBoot">View details »</a></p>
+                </div>
+                <!--/span-->
+
+                <div class="col-6 col-sm-6 col-lg-4">
+                    <h2 style="text-decoration: underline">Github</h2>
+                    <h5><span class="label label-primary">Github</span></h5>
+                    <h5><span class="glyphicon glyphicon-time"></span> Post by Ayaleneh yilma, Sep 27, 2015.</h5>
+                    <br>
+                    <p>Bootstrap is a front-end framework that uses CSS and JavaScript to facilitate responsive Web
+                        design. Bootply is a playground for Bootstrap that enables developers and designers to test,
+                        prototype and create mockups using Bootstrap
+                        friendly HTML, CSS and Javascript.</p>
+                    <p><a class="btn btn-default" href="/Github">View details »</a></p>
+                </div>
+                <!--/span-->
+
+                <div class="col-6 col-sm-6 col-lg-4">
+                    <h2 style="text-decoration: underline">Program Design</h2>
+                    <h5><span class="label label-primary">Program Design</span></h5>
+                    <h5><span class="glyphicon glyphicon-time"></span> Post by Ayaleneh yilma, Sep 27, 2015.</h5>
+                    <br>
+                    <p>Bootstrap is a front-end framework that uses CSS and JavaScript to facilitate responsive Web
+                        design. Bootply is a playground for Bootstrap that enables developers and designers to test,
+                        prototype and create mockups using Bootstrap
+                        friendly HTML, CSS and Javascript.</p>
+                    <p><a class="btn btn-default" href="#">View details »</a></p>
+                </div>
+                <!--/span-->
+            </div>
+            <!--/row-->
+        </div>
+        <!--/span-->
+        <div col-xs-2 col-sm-2>
+
+            <div class="content_last">
+                <h3>Term you should to Know</h3>
+                <a href="#" id="a1">GitHub</a>
+                <a href="#" id="a2">Program Design & Algorithm</a>
+                <a href="#" id="a3">Core Java</a>
+                <a href="#" id="a4">Polymorphism</a>
+                <a href="#" id="a5">Inheritance</a>
+                <a href="#" id="a6">Encapsulation</a>
+                <a href="#" id="a7">Composition</a>
+                <a href="#" id="a8">HTML5</a>
+                <a href="#" id="a9">CSS3</a>
+                <a href="#" id="a10">JavaScript</a>
+                <a href="#" id="a11">MySql</a>
+                <a href="#" id="a12">SpringBoot</a>
+                <a href="#" id="a13">MavenProject</a>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--footer-->
+
+
+<!-- Site footer -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-xs-6 col-md-3">
+                <h6>Categories</h6>
+                <ul class="footer-links">
+                    <li><a href="/html5">Web Design</a></li>
+                    <li><a href="/Polymorphism">Java Polymorphism</a></li>
+                    <li><a href="/springBoot">Spring Boot</a></li>
+                    <li><a href="/Github">Github</a></li>
+                    <li><a href="/exercise">Exercise</a></li>
+                    <li><a href="/sampleProject">Project</a></li>
+                </ul>
+            </div>
+
+            <div class="col-xs-6 col-md-3">
+                <h6>Quick Links</h6>
+                <ul class="footer-links">
+                    <li><a href="/AboutDeveloper">About Us</a></li>
+                    <li><a href="/AboutDeveloper">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="col-sm-12 col-md-6">
+                <h6>About The Website</h6>
+                <p class="text-justify">Elevate.com  is an initiative to help the
+                    upcoming programmers by providing the most efficient hand out and code or
+                    snippets as the code wants to be simple. We will help beginner to  build up concepts in different
+                    programming languages that include  Java, HTML, CSS, Bootstrap, JavaScript, Spring Boot,SQL
+                    and Algorithm.</p>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <p class="copyright-text">Copyright &copy; 2019 All Rights Reserved.
+                </p>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <ul class="social-icons">
+                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a class="whatsapp" href="#"><i class="fa fa-whatsapp"></i></a></li>
+                    <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="main.js"></script>
+<script src="../static/main.js"></script>
 </body>
 </html>

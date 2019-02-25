@@ -1,13 +1,494 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" th:href="@{style.css}" type="text/css">
+    <link rel="stylesheet" href="../static/style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 </head>
 <body>
-<h2>Core java page</h2>
+
+<div class="navbar navbar-fixed-top navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <img src="https://res.cloudinary.com/dmwim1a1p/image/upload/v1550954458/Elevate-Logo.png"
+                 class="navbar-brand" id="toplogo" alt="Logo">
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">About
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/AboutBootCamp">About BootCamp</a></li>
+                        <li><a href="/AboutDeveloper">About Developer</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+        <!-- /.nav-collapse -->
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.navbar -->
+
+<div class="container-fluid">
+    <div class="row row-offcanvas row-offcanvas-left">
+
+
+        <div class="col-xs-5 col-sm-3 sidenav-offcanvas sidenav" role="navigation">
+            <div class="content">
+                <h4>Topics</h4>
+                <a href="/Github">GitHub</a>
+                <a href="/ProgramDesign">Program Design & Algorithm</a>
+                <button class="dropdown-btn">Java
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-container">
+                    <a href="/CoreJava">Core Java</a>
+                    <a href="/Polymorphism">Polymorphism</a>
+                    <a href="/Inheritance">Inheritance</a>
+                    <a href="/Encapsulation">Encapsulation</a>
+                    <a href="/Composition">Composition</a>
+                </div>
+
+                <button class="dropdown-btn">Web Design
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-container">
+                    <a href="/html5">HTML5</a>
+                    <a href="/css">CSS3</a>
+                    <a href="/javascript">JavaScript</a>
+                    <a href="/mysql">MySql</a>
+                    <a href="/springBoot">SpringBoot</a>
+                </div>
+                <a href="/Github">Exercise</a>
+                <a href="/Github">Sample Project</a>
+                <br>
+                <div class="input-group">
+                    <input type="text" class="form-control"  id="myInput" placeholder="Search Blog..">
+                    <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="col-xs-11 col-sm-6">
+            <br>
+            <div class="jumbotron">
+                <a href="#" class="visible-xs" data-toggle="offcanvas"><i class="fa fa-lg fa-reorder"></i></a>
+                <h1>Core Java</h1>
+
+                <div id="pageToc" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                    <ul><li><a href="#variables">Variables</a></li><li><a href="#operations">Operations</a></li><li><a href="#classes-objects">Classes + Objects</a><ul><li><a href="#fields">Fields</a></li><li><a href="#constructors">Constructors</a></li><li><a href="#methods">Methods</a></li></ul></li><li><a href="#interfaces">Interfaces</a></li><li><a href="#packages">Packages</a></li></ul>
+                </div>
+                <div id="lastUpdate">
+                    <table><tr><td class="authorPhoto"></td>
+                        <td><p style="margin: 0px 0px 6px 0px;">
+                            Ayaleneh yilma<br>
+                            Last update: 2015-02-13
+                        </p>
+                            <div class="authorSocialLinks"></div>
+                        </td>
+                    </tr>
+                    </table>
+                </div>
+
+        </div>
+
+            <a name="variables"></a>
+            <h2>Variables</h2>
+            <p>
+                Computer programs, regardless of programming language, typically read data from somewhere (file, keyboard, mouse, network etc.),
+                process the data, and write some data somewhere again (to screen, file, network etc.).
+            </p>
+
+            <p>
+                In a Java program data is kept in <i>variables</i>. Your Java program first declares the variables, then read data into them, execute operations
+                on the variables, and then write the variables (or data based on the variables) somewhere again.
+            </p>
+
+            <p>
+                Each variable has a data type. The data type determines what kind of data the variable can contain, and what operations
+                you can execute on it. For instance, a variable could be a number. Numbers can be added, subtracted, multiplied, divided etc.
+                Or, a variable could be a string (text). String's can be divided into substrings, searched for characters, concatenated with
+                other strings etc. Java comes with a set of built-in data types.
+            </p>
+
+            <p>
+                Here is a simple Java variable declaration and operation example. Don't worry if you don't understand it
+                now. Later texts in this Java language tutorial explains the details. The purpose of the example is just to give
+                you a feeling for how working with Java variables look.
+            </p>
+
+            <pre class="codeBox">
+int myNumber;
+
+myNumber = 0;
+
+myNumber = myNumber + 5;
+</pre>
+
+            <p>
+                The first line of this example declares a variable named <code>myNumber</code> of the data type <code>int</code>.
+                An <code>int</code> is a 32 bit integer (number without fractions).
+            </p>
+
+            <p>
+                The second line sets the value of the <code>myNumber</code> variable to 0.
+            </p>
+
+            <p>
+                The third line adds 5 to the current value of <code>myNumber</code> (which we just set to 0 in the line above).
+            </p>
+
+
+
+
+            <a name="operations"></a>
+            <h2>Operations</h2>
+            <p>
+                Operations in Java are the instructions you can use to process the data in variables. Some operations
+                read and write the values of variables (as you have already seen examples of), while other operations
+                control the program flow. The most important operations are:
+            </p>
+
+            <ul>
+                <li>Variable operations
+                    <ul>
+                        <li>Variable assignment of values.</li>
+                        <li>Variable reading of values.</li>
+                        <li>Variable arithmetic.</li>
+                        <li>Object instantiation.</li>
+                    </ul>
+                </li>
+                <li>
+                    Program flow
+                    <ul>
+                        <li><a href="#"><code>for</code> loops</a>.</li>
+                        <li><a href="#"><code>while</code> loops</a>.</li>
+                        <li><a href="#"><code>if</code> statements (branches)</a>.</li>
+                        <li><a href="#"><code>switch</code> statements</a>.</li>
+                        <li>Method calls.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>
+                All of these operations are explained in detail in their own texts.
+            </p>
+
+            <p>
+                Here are a few examples of operations:
+            </p>
+
+
+            <pre class="codeBox">
+int number = 0;
+int abs    = 0;
+
+//imagine some operations that assign a value to number
+// - but left out of this example.
+
+if(number >= 0) {
+    abs = number;
+} else {
+    abs = -number;
+}
+</pre>
+
+            <p>
+                This example first declares two variables named <code>number</code> and <code>abs</code>. The variable <code>abs</code>
+                is supposed to contain the absolute value of <code>number</code>. The absolute value of a number is always positive.
+                For positive numbers the absolute value is the number itself. For negative numbers the absolute value is the number
+                without the negative sign. For instance, the absolute value of -10 is 10.
+            </p>
+
+            <p>
+                The <code>if</code> operation checks the value of the <code>number</code> variable to see if it is larger than or
+                equal to 0. If it is, the absolute value assigned to the <code>abs</code> variable is the value of the
+                <code>number</code> variable. If the <code>number</code> value is less than 0, then the value assigned
+                to <code>number</code> is equal to <code>-number</code>. Negating a negative number gives a positive number, remember?
+                -(-10) is 10.
+            </p>
+
+
+
+
+            <a name="classes-objects"></a>
+            <h2>Classes + Objects</h2>
+            <p>
+                Classes group variables and operations together in coherent modules. A class can have fields, constructors and methods
+                (plus more, but that is not important now). I will shortly describe fields, constructors and methods here, but they
+                are explained in more details in their own texts too.
+            </p>
+
+
+            <p>
+                Objects are instances of classes. When you create an object, that object is of a certain class. The class is like
+                a template (or blueprint) telling how objects of that class should look. When you create an object, you say "give me
+                an object of this class".
+            </p>
+
+            <p>
+                If you think of a factory producing lots
+                and lots of the same items, then the class would be the blueprint / manual of how the finished product should look,
+                and the objects would be each of the finished products. If the factory produced cars, then the blueprint / design manual
+                of the cars to produce corresponds to a Java class, and the physical cars produced corresponds to Java objects.
+            </p>
+
+            <p>
+                Here is a simple diagram illustrating the principle of objects being of a certain class. The class determines what
+                fields and methods the objects of that class have.
+            </p>
+
+            <table class="diagram"  >
+                <tr><td align="center"><img src="/images/java/classes-objects.png" alt="A Java class can contain fields, constructors and methods." /></td></tr>
+                <tr><td align="center"><b>A Java class can contain fields, constructors and methods.</b></td></tr>
+            </table>
+
+            <p>
+                Here is an example Java class declaration:
+            </p>
+
+            <pre class="codeBox">
+public class Car {
+
+}
+</pre>
+
+
+            <p>
+                This example declares a class named <code>Car</code>. The Car class does not contain any fields, constructors or
+                methods. It is empty. The example primarily serves to show you an example of how a class declaration looks in
+                Java code.
+            </p>
+
+
+
+            <a name="fields"></a>
+            <h3>Fields</h3>
+            <p>
+                A field is a variable that belongs to a class or an object. It is a piece of data, in other words.
+                For instance, a Car class could define the field <code>brand</code> which all Car objects would have.
+                Each Car object could then have a different value for the brand field.
+            </p>
+
+
+
+            <p>
+                Here is the Car class declaration from above with a field name <code>brand</code> added:
+            </p>
+
+            <pre class="codeBox">
+public class Car {
+    private String brand;
+}
+</pre>
+
+            <p>
+                This example declares a field named <code>brand</code> of data type <code>String</code> which is text.
+            </p>
+
+
+
+
+            <a name="constructors"></a>
+            <h3>Constructors</h3>
+            <p>
+                Constructors are a special kind of method that is executed when an object of that class is created.
+                Constructors typically initialize the objects internal fields - if necessary.
+            </p>
+
+
+
+            <p>
+                Here is the Car class from before with a constructor that initializes the <code>brand</code> field:
+            </p>
+
+
+            <pre class="codeBox">
+public class Car {
+
+    private String brand;
+
+    public Car(String theBrand) {
+        this.brand = theBrand;
+    }
+}
+</pre>
+
+
+
+
+            <a name="methods"></a>
+            <h3>Methods</h3>
+            <p>
+                Methods are groups of operations that carry out a certain function together. For instance, a method may
+                add to numbers, and divide it by a third number. Or, a method could read and write data in a database etc.
+            </p>
+
+            <p>
+                Methods are typically used when you need to group operations together, that you need to be able execute
+                from several different places. Or, if you just want your code to be easier to read. In other programming languages
+                methods may be called "procedures" or "functions".
+            </p>
+
+
+
+            <p>
+                Here is the Car class from before with a single, simple method named <code>getBrand</code> added:
+            </p>
+
+
+            <pre class="codeBox">
+public class Car {
+
+    private String brand;
+
+    public Car(String theBrand) {
+        this.brand = theBrand;
+    }
+
+
+    public String getBrand() {
+        return this.brand;
+    }
+}
+</pre>
+
+
+
+            <a name="interfaces"></a>
+            <h2>Interfaces</h2>
+
+            <p>
+                Interfaces is a central concept in Java. An interface describes what methods a certain object should have
+                available on it. A class can implement an interface. When a class implements an interface, the class has to
+                implement all the methods described in the interface.
+            </p>
+
+
+
+            <a name="packages"></a>
+            <h2>Packages</h2>
+
+            <p>
+                Packages in Java is another central concept. A package is a directory containing Java classes and interfaces.
+                Packages provides a handy way of grouping related classes and interfaces, thus making modularization of
+                your Java code easier.
+            </p>
+        </div>
+
+        <!--/span-->
+        <div col-xs-2 col-sm-2>
+
+            <div class="content_last">
+                <h3>Term you should to Know</h3>
+                <a href="#" id="a1">GitHub</a>
+                <a href="#" id="a2">Program Design & Algorithm</a>
+                <a href="#" id="a3">Core Java</a>
+                <a href="#" id="a4">Polymorphism</a>
+                <a href="#" id="a5">Inheritance</a>
+                <a href="#" id="a6">Encapsulation</a>
+                <a href="#" id="a7">Composition</a>
+                <a href="#" id="a8">HTML5</a>
+                <a href="#" id="a9">CSS3</a>
+                <a href="#" id="a10">JavaScript</a>
+                <a href="#" id="a11">MySql</a>
+                <a href="#" id="a12">SpringBoot</a>
+                <a href="#" id="a13">MavenProject</a>
+
+            </div>
+        </div>
+
+    </div>
+
+<!--footer-->
+
+
+<!-- Site footer -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-xs-6 col-md-3">
+                <h6>Categories</h6>
+                <ul class="footer-links">
+                    <li><a href="/html5">Web Design</a></li>
+                    <li><a href="/Polymorphism">Java Polymorphism</a></li>
+                    <li><a href="/springBoot">Spring Boot</a></li>
+                    <li><a href="/Github">Github</a></li>
+                    <li><a href="/exercise">Exercise</a></li>
+                    <li><a href="/sampleProject">Project</a></li>
+                </ul>
+            </div>
+
+            <div class="col-xs-6 col-md-3">
+                <h6>Quick Links</h6>
+                <ul class="footer-links">
+                    <li><a href="/AboutDeveloper">About Us</a></li>
+                    <li><a href="/AboutDeveloper">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="col-sm-12 col-md-6">
+                <h6>About The Website</h6>
+                <p class="text-justify">Elevate.com  is an initiative to help the
+                    upcoming programmers by providing the most efficient hand out and code or
+                    snippets as the code wants to be simple. We will help beginner to  build up concepts in different
+                    programming languages that include  Java, HTML, CSS, Bootstrap, JavaScript, Spring Boot,SQL
+                    and Algorithm.</p>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <p class="copyright-text">Copyright &copy; 2019 All Rights Reserved.
+                </p>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <ul class="social-icons">
+                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a class="whatsapp" href="#"><i class="fa fa-whatsapp"></i></a></li>
+                    <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="main.js"></script>
+<script src="../static/main.js"></script>
 </body>
 </html>

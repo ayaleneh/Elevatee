@@ -81,6 +81,14 @@ public class HomeController {
     public String coreJava(){
         return "CoreJava";
     }
+    @GetMapping("/Exercise")
+    public String exercise(){
+        return "Exercise";
+    }
+    @GetMapping("/project")
+    public String project(){
+        return "project";
+    }
     //other controller
     @GetMapping("Github")
     public String gitHub(){

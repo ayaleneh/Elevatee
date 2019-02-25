@@ -1,13 +1,455 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" th:href="@{style.css}" type="text/css">
+    <link rel="stylesheet" href="../static/style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 </head>
 <body>
-<h2>html5</h2>
+
+<div class="navbar navbar-fixed-top navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <img src="https://res.cloudinary.com/dmwim1a1p/image/upload/v1550954458/Elevate-Logo.png"
+                 class="navbar-brand" id="toplogo" alt="Logo">
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">About
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/AboutBootCamp">About BootCamp</a></li>
+                        <li><a href="/AboutDeveloper">About Developer</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+        <!-- /.nav-collapse -->
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.navbar -->
+
+<div class="container-fluid">
+    <div class="row row-offcanvas row-offcanvas-left">
+
+
+        <div class="col-xs-5 col-sm-3 sidenav-offcanvas sidenav" role="navigation">
+            <div class="content">
+                <h4>Topics</h4>
+                <a href="/Github">GitHub</a>
+                <a href="/ProgramDesign">Program Design & Algorithm</a>
+                <button class="dropdown-btn">Java
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-container">
+                    <a href="/CoreJava">Core Java</a>
+                    <a href="/Polymorphism">Polymorphism</a>
+                    <a href="/Inheritance">Inheritance</a>
+                    <a href="/Encapsulation">Encapsulation</a>
+                    <a href="/Composition">Composition</a>
+                </div>
+
+                <button class="dropdown-btn">Web Design
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-container">
+                    <a href="/html5">HTML5</a>
+                    <a href="/css">CSS3</a>
+                    <a href="/javascript">JavaScript</a>
+                    <a href="/mysql">MySql</a>
+                    <a href="/springBoot">SpringBoot</a>
+                </div>
+                <a href="/Github">Exercise</a>
+                <a href="/Github">Sample Project</a>
+                <br>
+                <div class="input-group">
+                    <input type="text" class="form-control"  id="myInput" placeholder="Search Blog..">
+                    <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="col-xs-11 col-sm-7">
+            <br>
+            <div class="jumbotron">
+                <a href="#" class="visible-xs" data-toggle="offcanvas"><i class="fa fa-lg fa-reorder"></i></a>
+                <h1>HTML5 Quick Tutorial</h1>
+
+                <div id="lastUpdate">
+                    <table><tr><td class="authorPhoto"></td>
+                        <td><p style="margin: 0px 0px 6px 0px;">
+                            Ayaleneh yilma<br>
+                            Last update: 2015-02-13
+                        </p>
+                            <div class="authorSocialLinks"></div>
+                        </td>
+                    </tr>
+                    </table>
+                </div>
+
+            </div>
+
+
+        <div id='p_content'>
+            <div id='adv_footer'><script>document.getElementById("p_content").classList.add("advg_2");</script><ins class="adsbygoogle g_336_280" data-ad-client="ca-pub-9841755376220312" data-ad-slot="2349060447"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+
+
+            <p class='ptxt'><em>HTML5</em> new features are based on HTML, CSS, DOM, and JavaScript, and reduce the need for external plugins (like Flash).</p>
+
+            <h2 class='ch3'>About HTML5 syntax</h2>
+            <p class='ptxt'>HTML5 syntax is compatible with both HTML4 and XHTML.<br>
+                - You can close the single tag elements (META, BR, HR, INPUT, IMG) with a slash, <span class='sb'>&lt;tag /&gt;</span>, like in XHTML; or you can choose to not add the slash, <span class='sb'>&lt;tag&gt;</span>.<br>
+                - You can use both lower case, or upper case for the name of the tags and attributes.<br>
+                So, all the variants bellow are valid HTML5:</p>
+
+            <pre class='code'>
+&lt;meta charset='utf-8'&gt;
+
+ <span style='color:#010101'>OR, closed with slash:</span>
+
+&lt;meta charset='utf-8' /&gt;
+</pre>
+
+            <pre class='code'>
+&lt;img src='image.jpg' alt='Some text'&gt;
+ <span style='color:#010101'>OR:</span>
+&lt;img src='image.jpg' alt='Some text' /&gt;
+ <span style='color:#010101'>OR, with upper case:</span>
+&lt;IMG src='image.jpg' ALT='Some text'&gt;
+</pre>
+
+            <pre class='code'>
+&lt;br&gt;
+ <span style='color:#010101'>OR:</span>
+&lt;BR&gt;
+ <span style='color:#010101'>OR:</span>
+&lt;br /&gt;
+</pre>
+            <br>
+            - In HTML5 you can choose to not specify the <span class='sb'>type</span> attribute for the elements &lt;script&gt;, and &lt;style&gt;, it is optional.
+
+            <pre class='code'>
+&lt;script&gt;
+ // JavaScript code
+&lt;/script&gt;
+</pre>
+
+            <pre class='code'>
+&lt;style&gt;
+ /* CSS code */
+&lt;/style&gt;
+</pre>
+            • All these variants are valid in HTML5.<br><br>
+
+            <h3 id='hshs'>HTML5 structure</h3>
+            HTML5 doctype is much simpler:
+
+            <pre class='code'>
+&lt;!doctype html&gt;</pre>
+            Meta charset tag is much simpler:
+
+            <pre class='code'>
+&lt;meta charset='utf-8'&gt;</pre>
+            <br>
+            Divs are now used for styling rather than structure; HTML5 includes several new structural items that help define parts of the document.<br>
+            These are the main structural elements you'll use most often in HTML5:<br>
+
+            <ul>
+                <li><span class='sb'>&lt;header&gt;</span> - is used to define a header, or navigation aids for some part of a Web page, be it the entire page, an &lt;article&gt; element, or a &lt;section&gt; element.<br>
+                    <span class='si'>- Things you'd usually wrap in a H1, H2, Hx, &lt;nav&gt; tag with main links.</span></li>
+                <li><span class='sb'>&lt;footer&gt;</span> - represents a footer for the page, for a &lt;section&gt;, or for an &lt;article&gt;; and can contain information about the author, copyright information, etc.</li>
+                <li><span class='sb'>&lt;section&gt;</span> - represents a section of a document or application. It is used to logically group the document structure.<br>
+                    It can contains header, articles, or navigation menu, footer.</li>
+                <li><span class='sb'>&lt;nav&gt;</span> - is a container for navigation links on a Web page. This item should be used for menu with navigation links.<br>
+                    If you have a &lt;footer&gt; that contains navigation links, you do not need to wrap these links in a &lt;nav&gt; element, since the &lt;footer&gt; will suffice on its own.</li>
+                <li><span class='sb'>&lt;article&gt;</span> - is used to define an independent item on the page (or in a &lt;section&gt;) that can be distributed on its own, such as a news article, blog post, or comment.</li>
+                <li><span class='sb'>&lt;aside&gt;</span> - can be used to define a sidebar or some other content that is considered somewhat separate to the content around it. An example of this might be advertising blocks.</li>
+                <li><span class='sb'>&lt;hgroup&gt;</span> - used to group a set of H1, H2, H3, ... elements when the heading has multiple levels, such as a title and a subtitle</li>
+            </ul>
+            <br>
+            HTML5 comes with other interesting items such as the &lt;video&gt; and &lt;audio&gt;, plus new and changed elements and attributes, but this tutorial is a quick quide that presents just the basics that will let you quickly move from HTML4 or XHTML to HTML5.<br><br>
+
+            Here's a common structure of a HTML5 document that contains a top header (with a horisontal main menu), a section in the left side (with a vertical menu and an aside, for a banner), another section (that contains a header, two articles and footer), and a footer in the bottom of the page (<span class='si'>click on the picture below</span>):<br>
+            <img alt='HTML5 structure' class='imgbox' height='300' src='addons/html/html5_structure.jpg' width='295' /><br>
+            <br>
+            You can also use the id, and class attributes, &lt;div&gt;, &lt;span&gt;, &lt;p&gt;, and other HTML tags to design and organize the content of your HTML document.<br>
+            In the example below there are the HTML5 and CSS codes to create a web page based on the structure (template) presented in the image above:
+            <h4>The HTML5 document</h4>
+
+            <pre class='code'>
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+ &lt;meta charset='utf-8' /&gt;
+ &lt;title&gt;Web Development Courses and Tutorials&lt;/title&gt;
+ &lt;meta name='description' content='Example document in HTML5, template, courses and tutorials' /&gt;
+ &lt;meta name='keywords' content='html5, html5 tutorials' /&gt;
+ &lt;link rel='stylesheet' type='text/css' href='style.css' /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;header id='page_header'&gt;
+ &lt;h1&gt;Web Development Courses and Tutorials&lt;/h1&gt;
+ &lt;nav&gt;
+ &lt;ul&gt;
+ &lt;li&gt;&lt;a href='/' title='Home'&gt;Home&lt;/a&gt;&lt;/li&gt;
+ &lt;li&gt;&lt;a href='//marplo.net/' title='Free Courses'&gt;Free Courses&lt;/a&gt;&lt;/li&gt;
+ &lt;li&gt;&lt;a href='//marplo.net/forum/'&gt;Forum&lt;/a&gt;&lt;/li&gt;
+ &lt;li&gt;&lt;a href='/contact' title='Contact Us'&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+ &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;section id='posts'&gt;
+ &lt;header id='posts_header'&gt;
+ &lt;h2&gt;HTML5 Tutorials&lt;/h2&gt;
+ &lt;/header&gt;
+ &lt;article class='post'&gt;
+ &lt;header&gt;
+ &lt;h3&gt;Quick learning Guide&lt;/h3&gt;
+ &lt;/header&gt;
+ &lt;div class='ctext'&gt;
+ Learn about the new features in HTML5.&lt;br /&gt;
+ New tags, and structure elements.
+ &lt;/div&gt;
+ &lt;aside class='post_baner'&gt;Here can be a banner&lt;/aside&gt;
+ &lt;p&gt;
+ &lt;em&gt;HTML5&lt;/em&gt; new features are based on HTML, CSS, DOM, and JavaScript, and reduce the need for external plugins (like Flash).&lt;br /&gt;
+ A lot of the new features of HTML center around creating a better platform for web-based applications, &lt;a href='https://coursesweb.net/html/html5-quick-tutorial_t' title='HTML5 Quick Tutorial'&gt;Read more&lt;/a&gt; ...
+ &lt;/p&gt;
+ &lt;/article&gt;
+ &lt;article class='post'&gt;
+ &lt;header&gt;
+ &lt;h3&gt;New Form elements and attributes in HTML5&lt;/h3&gt;
+ &lt;/header&gt;
+ &lt;div class='ctext'&gt;
+ HTML forms are used to pass data to a server, to be processed by a programming language (like PHP, ASP). HTML forms can also be used with script languages, like JavaScript.
+ &lt;/div&gt;
+ &lt;p&gt;
+ HTML5 adds a number of new input types for form (datetime, datetime-local, date, month, week, time, number, range, email, url, search, and color), &lt;a href='https://coursesweb.net/html/form-elements-attributes-html5' title='New Form elements'&gt;Read more&lt;/a&gt; ...
+ &lt;/p&gt;
+ &lt;/article&gt;
+ &lt;footer id='post_footer'&gt;
+ &lt;p&gt;See more HTML lessons and tutorials: &lt;a href='https://coursesweb.net/html/' title='HTML Course'&gt;HTML Course&lt;/a&gt;.&lt;/p&gt;
+ &lt;/footer&gt;
+&lt;/section&gt;
+
+&lt;section id='sidebar'&gt;
+ &lt;nav&gt;
+ &lt;ul&gt;
+ &lt;li&gt;&lt;a href='https://coursesweb.net/html/' title='HTML Course'&gt;HTML Course&lt;/a&gt;&lt;/li&gt;
+ &lt;li&gt;&lt;a href='https://coursesweb.net/css/' title='CSS Course'&gt;CSS Course&lt;/a&gt;&lt;/li&gt;
+ &lt;li&gt;&lt;a href='https://coursesweb.net/javascript/' title='JavaScript'&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
+ &lt;li&gt;&lt;a href='https://coursesweb.net/php-mysql/' title='PHP-MySQL'&gt;PHP-MySQL&lt;/a&gt;&lt;/li&gt;
+ &lt;li&gt;&lt;a href='https://coursesweb.net/flash/' title='Flash-ActionScript 3'&gt;Flash-ActionScript 3&lt;/a&gt;&lt;/li&gt;
+ &lt;li&gt;&lt;a href='https://marplo.net/jocuri' title='Flash Games'&gt;Flash Games&lt;/a&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+ &lt;/nav&gt;
+ &lt;aside class='sidebar_baner'&gt;Banner in sidebar&lt;/aside&gt;
+&lt;/section&gt;
+
+&lt;footer id='page_footer'&gt;
+ &lt;p&gt;From: &lt;a href='https://coursesweb.net/' title='Free Web Development courses'&gt;coursesweb.net&lt;/a&gt;&lt;/p&gt;
+&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+
+            <h4>CSS code, in the style.css file</h4>
+
+            <pre class='code'>
+body {
+ width: 99%;
+ margin: 2px auto;
+ font-family: Arial, 'MS Trebuchet', sans-serif;
+ text-align: center;
+}
+header, footer, section, aside, nav, article { display: block; }
+
+header#page_header {
+ width: 100%;
+ margin: 4px auto;
+ border: 2px solid blue;
+}
+header#page_header nav ul {
+ list-style: none;
+ margin: 0;
+ padding: 0;
+}
+#page_header nav ul li {
+ display:inline;
+ margin: 0 20px 0 0;
+ padding: 1px;
+}
+section#posts {
+ float: right;
+ width: 79%;
+ background-color: #f1f2fe;
+ border: 1px solid yellow;
+}
+section#posts header#posts_header {
+ background-color: #abcdef;
+ border: 1px solid green;
+}
+article.post {
+ margin:10px;
+ background-color: yellow;
+ text-align: left;
+}
+article.post aside {
+ float: right;
+ margin-top: -58px;
+ width: 250px;
+ height: 120px;
+ background-color: #fefefe;
+}
+article.post p { clear: right;}
+section#sidebar {
+ float: left;
+ width: 18%;
+ background-color: #d7d8fe;
+ border: 1px solid green;
+ padding:5px;
+}
+section#sidebar nav ul {
+ margin: 3px auto;
+ text-align: left;
+ padding: 0 0 0 15px;
+}
+section#sidebar aside {
+ width: 160px;
+ height: 250px;
+ margin: 10px auto;
+ background-color: #fefefe;
+}
+footer#page_footer {
+ clear: both;
+ width: 100%;
+ margin: 4px auto;
+ border: 2px solid blue;
+}
+</pre>
+            <br>
+            These CSS rules are stored in an external file, named 'style.css', and it is included in the HTML document with the following code, added in the HEAD section.
+            <pre class='code'>
+&lt;link rel='stylesheet' type='text/css' href='style.css' /&gt;</pre>
+
+            <!--/row-->
+        </div>
+        </div>
+        <!--/span-->
+        <div col-xs-2 col-sm-2>
+
+            <div class="content_last">
+                <h3>Term you should to Know</h3>
+                <a href="#" id="a1">GitHub</a>
+                <a href="#" id="a2">Program Design & Algorithm</a>
+                <a href="#" id="a3">Core Java</a>
+                <a href="#" id="a4">Polymorphism</a>
+                <a href="#" id="a5">Inheritance</a>
+                <a href="#" id="a6">Encapsulation</a>
+                <a href="#" id="a7">Composition</a>
+                <a href="#" id="a8">HTML5</a>
+                <a href="#" id="a9">CSS3</a>
+                <a href="#" id="a10">JavaScript</a>
+                <a href="#" id="a11">MySql</a>
+                <a href="#" id="a12">SpringBoot</a>
+                <a href="#" id="a13">MavenProject</a>
+
+            </div>
+        </div>
+        </div>
+</div>
+<!--footer-->
+
+
+<!-- Site footer -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-xs-6 col-md-3">
+                <h6>Categories</h6>
+                <ul class="footer-links">
+                    <li><a href="/html5">Web Design</a></li>
+                    <li><a href="/Polymorphism">Java Polymorphism</a></li>
+                    <li><a href="/springBoot">Spring Boot</a></li>
+                    <li><a href="/Github">Github</a></li>
+                    <li><a href="/exercise">Exercise</a></li>
+                    <li><a href="/sampleProject">Project</a></li>
+                </ul>
+            </div>
+
+            <div class="col-xs-6 col-md-3">
+                <h6>Quick Links</h6>
+                <ul class="footer-links">
+                    <li><a href="/AboutDeveloper">About Us</a></li>
+                    <li><a href="/AboutDeveloper">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="col-sm-12 col-md-6">
+                <h6>About The Website</h6>
+                <p class="text-justify">Elevate.com  is an initiative to help the
+                    upcoming programmers by providing the most efficient hand out and code or
+                    snippets as the code wants to be simple. We will help beginner to  build up concepts in different
+                    programming languages that include  Java, HTML, CSS, Bootstrap, JavaScript, Spring Boot,SQL
+                    and Algorithm.</p>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <p class="copyright-text">Copyright &copy; 2019 All Rights Reserved.
+                </p>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <ul class="social-icons">
+                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a class="whatsapp" href="#"><i class="fa fa-whatsapp"></i></a></li>
+                    <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="main.js"></script>
+<script src="../static/main.js"></script>
 </body>
 </html>
