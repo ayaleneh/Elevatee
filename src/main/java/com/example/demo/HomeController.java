@@ -50,6 +50,10 @@ public class HomeController {
         return "BootStrap";
     }
 
+    @GetMapping("/index")
+    public String index(){
+        return "index";
+    }
 
     //java file start here
     @GetMapping("/Abstraction")
