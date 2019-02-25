@@ -1,13 +1,148 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" th:href="@{style.css}" type="text/css">
+    <link rel="stylesheet" href="../static/style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 </head>
 <body>
-<h2>About developer</h2>
+
+<div class="navbar navbar-fixed-top navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <img src="https://res.cloudinary.com/dmwim1a1p/image/upload/v1550954458/Elevate-Logo.png"
+                 class="navbar-brand" id="toplogo" alt="Logo">
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="/index">Home</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">About
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/AboutBootCamp">About BootCamp</a></li>
+                        <li><a href="/AboutDeveloper">About Developer</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+        <!-- /.nav-collapse -->
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.navbar -->
+
+<div class="container-fluid">
+    <div class="row row-offcanvas row-offcanvas-left">
+            < class="col-sm-4">
+                <a href="#demo" data-toggle="collapse">
+                    <img src="https://res.cloudinary.com/dzvnlvrcf/image/upload/v1551117434/45651750_2037393766317088_1893974328635031552_n.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
+                </a>
+                <br>
+                <br>
+                <p class=""><strong>Name:Ayaleneh yilma</strong></p><br>
+                <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>Ayaleneh getahun
+                <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>Ayaleneh getahun
+                <li><a class="whatsapp" href="#"><i class="fa fa-whatsapp"></i></a></li>Ayaleneh getahun
+                <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>Ayaleneh getahun
+
+            </div>
+            <div class="col-sm-4">
+                <a href="#demo2" data-toggle="collapse">
+                    <img src="solomonn.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
+                </a>
+                <p class="text-center"><strong>Solomon zikarge</strong></p><br>
+            </div>
+            <div class="col-sm-4">
+
+                <a href="#demo3" data-toggle="collapse">
+                    <img src="hannah.jpeg" class="img-circle person" alt="Random Name" width="255" height="255">
+                </a>
+                <p class="text-center"><strong>Hannah Sloss</strong></p><br>
+            </div>
+        </div>
+    </div>
+
+<!--footer-->
+
+
+<!-- Site footer -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-xs-6 col-md-3">
+                <h6>Categories</h6>
+                <ul class="footer-links">
+                    <li><a href="/html5">Web Design</a></li>
+                    <li><a href="/Polymorphism">Java Polymorphism</a></li>
+                    <li><a href="/springBoot">Spring Boot</a></li>
+                    <li><a href="/Github">Github</a></li>
+                    <li><a href="/exercise">Exercise</a></li>
+                    <li><a href="/sampleProject">Project</a></li>
+                </ul>
+            </div>
+
+            <div class="col-xs-6 col-md-3">
+                <h6>Quick Links</h6>
+                <ul class="footer-links">
+                    <li><a href="/AboutDeveloper">About Us</a></li>
+                    <li><a href="/AboutDeveloper">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="col-sm-12 col-md-6">
+                <h6>About The Website</h6>
+                <p class="text-justify">Elevate.com  is an initiative to help the
+                    upcoming programmers by providing the most efficient hand out and code or
+                    snippets as the code wants to be simple. We will help beginner to  build up concepts in different
+                    programming languages that include  Java, HTML, CSS, Bootstrap, JavaScript, Spring Boot,SQL
+                    and Algorithm.</p>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <p class="copyright-text">Copyright &copy; 2019 All Rights Reserved.
+                </p>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <ul class="social-icons">
+                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a class="whatsapp" href="#"><i class="fa fa-whatsapp"></i></a></li>
+                    <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="main.js"></script>
+<script src="../static/main.js"></script>
 </body>
 </html>

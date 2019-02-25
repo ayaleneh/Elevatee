@@ -21,8 +21,6 @@ $.getJSON("https://raw.githubusercontent.com/ayaleneh/Elevatee/master/src/main/r
         let newVar = new Variable(val.value)
         variableArray.push(newVar)
 
-
-
     })
 }).then(function(){
     populateDropdown()
